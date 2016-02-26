@@ -1,0 +1,55 @@
+<ion-view class="credits">
+	<ion-content overflow-scroll="true">
+		<section class="credits-content">
+			<div class="credits-block">
+				<h2>{{credits.comisariado.title}}</h2>
+				<p>{{credits.comisariado.name}}</p>
+				<div class="separator-down">
+					<span></span>
+				</div>
+ 				<ul class="social-links">
+ 					<li><a data-ng-click="openLink('http://scgallery.es/contacto/','_system','location=yes')"><span class="icon ion-location"></span></a></li>
+ 					<li><a data-ng-click="openLink('http://scgallery.es/','_system','location=yes')"><span class="icon ion-earth"></span></a></li>
+ 					<li><a data-ng-click="openLink('https://www.facebook.com/scgallerybilbao/','_system','location=yes')"><span class="icon ion-social-facebook"></span></a></li>
+ 					<li><a data-ng-click="openLink('https://twitter.com/scgallery','_system','location=yes')"><span class="icon ion-social-twitter"></span></a></li>
+ 					<li><a data-ng-click="openLink('https://www.instagram.com/scgallerybilbao/','_system','location=yes')"><span class="icon ion-social-instagram"></span></a></li>
+ 				</ul>
+				<div class="separator-up">
+					<span></span>
+				</div>
+			</div>
+			<div class="credits-block">
+				<h2>{{credits.designDevelop.title}}</h2>
+				<p>{{credits.designDevelop.name}}</p>
+				<div class="separator-down">
+					<span></span>
+				</div>
+				<ul class="social-links">
+					<li><a data-ng-click="openLink('http://www.workoholics.es/contacta/','_system','location=yes')"><span class="icon ion-location"></span></a></li>
+ 					<li><a data-ng-click="openLink('http://www.workoholics.es','_system','location=yes')"><span class="icon ion-earth"></span></a></li>
+ 					<li><a data-ng-click="openLink('https://www.facebook.com/Workoholics/','_system','location=yes')"><span class="icon ion-social-facebook"></span></a></li>
+ 					<li><a data-ng-click="openLink('https://twitter.com/workoholics_','_system','location=yes')"><span class="icon ion-social-twitter"></span></a></li>
+ 				</ul>
+ 				<div class="separator-up">
+					<span></span>
+				</div>
+			</div>
+			<div class="credits-block" data-ng-repeat="other in credits.others">
+				<h2>{{other.title}}</h2>
+				<p data-ng-repeat="component in other.components">{{component}}</p>
+			</div>
+			
+			<div class="h-space">
+				<div class="double-separator">
+					<span class="patch"></span>
+					<svg class="double-separator-svg">
+						<path d="m 0 15 l 10 -15 l 10 15" stroke="#919191" fill="transparent"/>
+						<path d="m 3 15 l 7 -10 l 7 10" stroke="#919191" fill="transparent"/>
+						<path d="m 0 5 l 10 15 l 10 -15" stroke="#919191" fill="transparent"/>
+						<path d="m 3 5 l 7 10 l 7 -10" stroke="#919191" fill="transparent"/>
+					</svg>
+				</div>
+			</path>
+		</section>
+	</ion-content>
+</ion-view>

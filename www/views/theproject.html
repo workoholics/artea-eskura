@@ -1,0 +1,19 @@
+<ion-view class="theproject">
+	<ion-content overflow-scroll="true">
+		<section class="theproject-content">
+			<h2>{{theproject.title}}</h2>
+			<div ng-bind-html="theproject.html">
+			</div>
+			<div class="double-separator">
+				<span class="patch"></span>
+				<svg class="double-separator-svg">
+					<path d="m 0 15 l 10 -15 l 10 15" stroke="#919191" fill="transparent"/>
+					<path d="m 3 15 l 7 -10 l 7 10" stroke="#919191" fill="transparent"/>
+					<path d="m 0 5 l 10 15 l 10 -15" stroke="#919191" fill="transparent"/>
+					<path d="m 3 5 l 7 10 l 7 -10" stroke="#919191" fill="transparent"/>
+				</svg>
+			</div>
+		</section>
+
+	</ion-content>
+</ion-view>

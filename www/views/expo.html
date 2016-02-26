@@ -1,0 +1,94 @@
+<ion-view class="expo-screen {{expodata.className}}">
+	<ion-content overflow-scroll="false" ng-show="expodata">
+		<header>
+			<h2>{{expodata.headerTitle}}</h2>
+		</header>
+		<div class="featured-img">
+
+		</div>
+		
+		<section class="expo-screen-content">
+			<section class="main-info">
+				<p class="category">{{expodata.category[lang]}}</p>
+				<h3>{{expodata.name}}</h3>
+				<p class="artist">{{expodata.artist}}</p>
+				<p>{{expodata.date[lang]}}</p>
+			</section>
+			<section class="description" ng-bind-html="expodata.description[lang]">
+			</section>
+
+			<section class="artists" ng-show="expodata.artists">
+				<p><strong>{{expodata.artists.title[lang]}}</strong></p>
+				<p data-ng-repeat="artist in expodata.artists.artists">{{artist}}</p>
+			</section>
+
+			<div class="separator-down" ng-show="expodata.socialLinks.length > 0">
+				<span></span>
+			</div>
+			<ul class="social-links" ng-show="expodata.socialLinks.length > 0">
+				<li data-ng-repeat="link in expodata.socialLinks">
+					<a data-ng-click="openLink('{{link.url}}','_system','location=yes')">
+						<img ng-show="link.image" src="{{link.image}}"/>
+						<span ng-show="link.icon" class="icon {{link.icon}}"></span>
+					</a>
+				</li>
+			</ul>
+			<div class="separator-up" ng-show="expodata.socialLinks.length > 0">
+				<span></span>
+			</div>
+
+			<div class="double-separator" ng-show="!expodata.socialLinks">
+				<span class="patch"></span>
+				<svg class="double-separator-svg">
+					<path d="m 0 15 l 10 -15 l 10 15" stroke="#919191" fill="transparent"/>
+					<path d="m 3 15 l 7 -10 l 7 10" stroke="#919191" fill="transparent"/>
+					<path d="m 0 5 l 10 15 l 10 -15" stroke="#919191" fill="transparent"/>
+					<path d="m 3 5 l 7 10 l 7 -10" stroke="#919191" fill="transparent"/>
+				</svg>
+			</div>
+
+			<section ng-show="expodata.video" class="video">
+				<p>{{expodata.video.title[lang]}}</p>
+				<iframe ng-src="{{expodata.video.url}}" width="{{videoWidth}}" height="{{videoHeight}}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</section>
+
+			<section ng-show="expodata.slider" class="expo-slider">
+				<p>{{expodata.slider.title[lang]}}</p>
+
+				<ion-slide-box>
+				    <ion-slide ng-repeat="slide in expodata.slider.slides">
+				    	<img ng-src="{{slide}}"/>
+				 	</ion-slide>
+				</ion-slide-box>
+			</section>
+			
+			<section ng-show="expodata.bio" class="bio">
+				<h3>{{expodata.artist}} - <strong>Bio</strong></h3>
+				<div ng-bind-html="expodata.bio.html[lang]">
+				</div>
+				<img ng-src="{{expodata.bio.img}}"/>
+			</section>
+
+			
+			<section ng-show="expodata.slider2" class="expo-slider">
+				<p>{{expodata.slider2.title[lang]}}</p>
+				<ion-slide-box>
+					<ion-slide ng-repeat="slide in expodata.slider2.slides">
+				    	<img ng-src="{{slide}}"/>
+				 	</ion-slide>
+				</ion-slide-box>
+			</section>
+			
+			<div class="double-separator">
+				<span class="patch"></span>
+				<svg class="double-separator-svg">
+					<path d="m 0 15 l 10 -15 l 10 15" stroke="#919191" fill="transparent"/>
+					<path d="m 3 15 l 7 -10 l 7 10" stroke="#919191" fill="transparent"/>
+					<path d="m 0 5 l 10 15 l 10 -15" stroke="#919191" fill="transparent"/>
+					<path d="m 3 5 l 7 10 l 7 -10" stroke="#919191" fill="transparent"/>
+				</svg>
+
+			</path>
+		</section>
+	</ion-content>
+</ion-view>

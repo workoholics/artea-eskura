@@ -1,0 +1,810 @@
+/* Vars*/
+
+$gutter : 10px;
+$light: #ffffff;
+$bg-dark: #232323;
+$grey: #919191;
+$f-dark: #232323;
+$l-grey: #5f5f5f;
+
+/*Mixins*/
+@mixin prefixer($property,$value){
+  -webkit-#{$property} : $value;
+  -moz-#{$property} : $value;
+  -ms-#{$property} : $value;
+  -o-#{$property} : $value;
+  #{$property} : $value;
+}
+    
+
+
+/*Main fonts*/
+
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-black-webfont.eot');
+    src: url('../fonts/deck-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-black-webfont.woff2') format('woff2'),
+         url('../fonts/deck-black-webfont.woff') format('woff'),
+         url('../fonts/deck-black-webfont.ttf') format('truetype'),
+         url('../fonts/deck-black-webfont.svg#deckblack') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-blackitalic-webfont.eot');
+    src: url('../fonts/deck-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-blackitalic-webfont.woff2') format('woff2'),
+         url('../fonts/deck-blackitalic-webfont.woff') format('woff'),
+         url('../fonts/deck-blackitalic-webfont.ttf') format('truetype'),
+         url('../fonts/deck-blackitalic-webfont.svg#deckblack_italic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-bold-webfont.eot');
+    src: url('../fonts/deck-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-bold-webfont.woff2') format('woff2'),
+         url('../fonts/deck-bold-webfont.woff') format('woff'),
+         url('../fonts/deck-bold-webfont.ttf') format('truetype'),
+         url('../fonts/deck-bold-webfont.svg#deckbold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-bolditalic-webfont.eot');
+    src: url('../fonts/deck-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/deck-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/deck-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/deck-bolditalic-webfont.svg#deckbold_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-italic-webfont.eot');
+    src: url('../fonts/deck-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-italic-webfont.woff2') format('woff2'),
+         url('../fonts/deck-italic-webfont.woff') format('woff'),
+         url('../fonts/deck-italic-webfont.ttf') format('truetype'),
+         url('../fonts/deck-italic-webfont.svg#deckitalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-light-webfont.eot');
+    src: url('../fonts/deck-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-light-webfont.woff2') format('woff2'),
+         url('../fonts/deck-light-webfont.woff') format('woff'),
+         url('../fonts/deck-light-webfont.ttf') format('truetype'),
+         url('../fonts/deck-light-webfont.svg#decklight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-lightitalic-webfont.eot');
+    src: url('../fonts/deck-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-lightitalic-webfont.woff2') format('woff2'),
+         url('../fonts/deck-lightitalic-webfont.woff') format('woff'),
+         url('../fonts/deck-lightitalic-webfont.ttf') format('truetype'),
+         url('../fonts/deck-lightitalic-webfont.svg#decklight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-thin-webfont.eot');
+    src: url('../fonts/deck-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-thin-webfont.woff2') format('woff2'),
+         url('../fonts/deck-thin-webfont.woff') format('woff'),
+         url('../fonts/deck-thin-webfont.ttf') format('truetype'),
+         url('../fonts/deck-thin-webfont.svg#deckthin') format('svg');
+    font-weight: 200;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-thinitalic-webfont.eot');
+    src: url('../fonts/deck-thinitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-thinitalic-webfont.woff2') format('woff2'),
+         url('../fonts/deck-thinitalic-webfont.woff') format('woff'),
+         url('../fonts/deck-thinitalic-webfont.ttf') format('truetype'),
+         url('../fonts/deck-thinitalic-webfont.svg#deckthin_italic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'deck';
+    src: url('../fonts/deck-webfont.eot');
+    src: url('../fonts/deck-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/deck-webfont.woff2') format('woff2'),
+         url('../fonts/deck-webfont.woff') format('woff'),
+         url('../fonts/deck-webfont.ttf') format('truetype'),
+         url('../fonts/deck-webfont.svg#deckregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Main styles*/
+body{
+	font-family: 'deck';
+}
+
+h1,h2,h3,h4,h5,h6,p,span,a{
+    font-family: 'deck';
+    color: $light;
+}
+
+h2{
+    font-size: 1.6em;
+}
+
+/* Helpers*/
+.h-space{
+    padding: 0 $gutter;
+}
+
+.button-scg{
+    width: $gutter * 20;
+    border:none;
+    background-color: #919191;
+    color : $light;
+    line-height: 44px;
+    @include prefixer(border-radius,$gutter);
+    &.activated{
+        background-color: darken(#919191,10%);
+    }
+}
+
+/* Social links */
+.social-links{
+    text-align: center;
+    padding: $gutter * 2 0;
+    li{
+        display: inline-block;
+        a{
+            padding: 0 $gutter;
+            .icon{
+                color: $l-grey;
+                font-size: 2em; 
+            }
+            img{
+                height: 25px;
+                width: auto;
+                display: inline-block;
+            }
+        }
+        
+    }
+}
+
+/* Separators*/
+
+.separator-up,
+.separator-down{
+    width: 100%;
+    display: block;
+    position: relative;
+    height: 1px;
+    background-color: $grey;
+    margin: $gutter * 3 0;
+    text-align: center;
+
+    &:before{
+        content: "";
+        display: inline-block;
+        width: 32px;
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        position: relative;
+    }
+
+    &:after{
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        z-index: 10;
+        height: 6px;
+        background-color: $light;
+    }
+
+    >span{
+        position: absolute;
+        content: "";
+        display: inline-block;
+        width: 32px;
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        left: 50%;
+        margin-left : -16px;
+        &:before{
+            position: absolute;
+            content: "";
+            display: inline-block;
+            width: 32px;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+            left: 50%;
+            margin-left : -16px;
+        }
+
+        &:after{
+            position: absolute;
+            content: "";
+            display: inline-block;
+            width: 32px;
+            border-left: 16px solid transparent;
+            border-right: 16px solid transparent;
+            left: 50%;
+            margin-left : -16px;
+        }
+    }
+}
+
+.separator-up{
+    &:before{
+        border-bottom: 24px solid $grey;
+        top: -24px;
+    }
+    &:after{
+        top: 1px;
+    }
+    >span{
+        top: -22px;
+        border-bottom: 24px solid $light;
+        &:before{
+            border-bottom: 24px solid $grey;
+            top: 4px;
+        }
+        &:after{
+            border-bottom: 24px solid $light;
+            top: 6px;
+        }
+    }
+}
+.separator-down{
+    &:before{
+        border-top: 24px solid $grey;
+        top: 0;
+    }
+    &:after{
+        top: -7px;
+    }
+    >span{
+        border-top: 24px solid $light;
+        top: -2px;
+        &:before{
+            border-top: 24px solid $grey;
+            top: -28px;
+        }
+        &:after{
+            border-top: 24px solid $light;
+            top: -30px;
+        }
+    }
+}
+
+.double-separator{
+    text-align: center;
+    margin: $gutter * 2 0;
+    position: relative;
+    &:before,
+    &:after{
+        content: "";
+        width: 100%;
+        background-color: $grey;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+    }
+    &:after{
+        top: 15px;
+    }
+    &:before{
+        top: 5px;
+    }
+
+    .patch{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 50%;
+        margin-left: -10px;
+        background-color: $light;
+        z-index: 10;
+    }
+
+    .double-separator-svg{
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        position: relative;
+        z-index: 20;
+    }
+}
+
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 5em;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,1);
+    text-align: center;
+    .spinner{
+        position: relative;
+        top: 40%;
+        width: 104px;
+        height: 54px;
+        display: inline-block;
+        animation-name: loader;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        -wekit-animation-name: loader;
+        -wekit-animation-duration: 4s;
+        -wekit-animation-iteration-count: infinite;
+    }
+}
+
+
+
+
+/* App bars */
+.bar{
+    &.bar-dark{
+        background-color: $bg-dark;
+        border:none;
+        background-image:none;
+        box-shadow:none;
+        border-color: $bg-dark;
+        .button{
+            border:none;
+            background-color:transparent;
+            &:before{
+                font-size: 30px;
+            }
+            &:before,
+            &:after{
+                border:none;
+            }
+        }
+    }
+
+    &.bar-subheader{
+        border-top: 1px solid transparentize($light,0.8);
+    }
+}
+
+
+/*Menu*/
+.menu{
+    background-color: $bg-dark;
+    .ion-close{
+        margin: $gutter 0;
+        border:none;
+        background-color: transparent;
+        padding: 0 $gutter;
+        min-width: 0;
+        color: $light;
+    }
+
+    .list{
+        .item{
+            padding: $gutter;
+            &.active{
+                .item-content{
+                    background-color:transparentize($light,0.9);
+                }
+            }
+            &.item-complex{
+                padding: 0;
+            }
+            .item-content{
+                @include prefixer(transition,.35s all);
+                &.activated{
+                    background-color:transparentize($light,0.9);
+                }
+            }
+        }
+
+        .item-complex{
+            .item-content{
+                padding: $gutter;
+            }
+        }
+
+        .item,.item-content{
+            background-color: $bg-dark;
+            color: $light;
+            border:none;
+            strong{
+                font-size: 0.9em;
+            }
+        }
+
+        .item{
+            border: 1px solid transparentize($light,0.8);
+            &.inner{
+                .item-content{
+                    padding-left: $gutter * 2;
+                }
+            }
+        }   
+    }
+}
+
+
+/* Home */
+.home{
+    header{
+        background-image: url(../img/home_header.jpg);
+        >*{
+            position: relative;
+            z-index: 10;
+        }
+        .brand{
+            padding-top: $gutter * 2;
+            text-align: center;
+            img{
+                max-width: 75px;
+                display: inline-block;
+            }
+            
+        }
+        h2,p{
+            text-align: center;
+            font-weight: 500;
+        }
+
+        h2{
+            font-size: 20px;
+            margin: $gutter / 2 0;
+        }
+
+        p{
+            margin:0;
+        }
+    }
+
+    .expo{
+        &:last-child{
+            border-bottom:none;
+        }
+    }
+}
+
+/* Expos*/
+
+.expo{
+    display: block;
+    width: 100%;
+    &.btoy{
+        background-image: url(../img/btoy_main.jpg);
+    }
+    &.vinz{
+        background-image: url(../img/vinz_main.jpg);
+    }
+    &.hoppek{
+        background-image: url(../img/hoppek_main.jpg);
+    }
+    &.grudziecki{
+        background-image: url(../img/grudziecki_main.jpg);
+    }
+    &.okuda{
+        background-image: url(../img/okuda_main.jpg);
+    }
+
+    &.paper{
+        background-image: url(../img/paper_main.jpg);
+    }
+    &.spy{
+        background-image: url(../img/spy_main.jpg);
+    }
+
+
+
+    &.activated{
+        &:after{
+            background-color: rgba(0,0,0,0);
+        }
+        .info{
+            *{
+                color: rgba(0,0,0,0);
+            }
+            .artist{
+                &:before,
+                &:after{
+                    border-color: rgba(0,0,0,0);
+                }
+            }
+        }
+    }
+
+    .info{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding-bottom: $gutter;
+        z-index: 10;
+        >*{
+            @include prefixer(transition,.35s all);
+            text-align: center;
+            margin: 0 0 $gutter / 2;
+        }
+        h3{
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .artist{
+            font-weight: 500;
+            font-size: 20px;
+            &:before,
+            &:after{
+                @include prefixer(transition,.35s all);
+                position: relative;
+                content: "";
+                width: $gutter * 2;
+                border-top: 2px solid $light;
+                display: inline-block;
+                top: -$gutter / 2;
+            }
+            &:before{
+                margin-right: $gutter;
+            }
+            &:after{
+                margin-left: $gutter;
+            }
+        }
+    }
+}
+
+/* Expos && header common*/
+.expo,
+.home header{
+    position: relative;
+    height: $gutter * 19;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 2px solid $light;
+    @media screen and (min-width: 678px){
+        height: $gutter * 35;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.4);
+        @include prefixer(transition,.35s all);
+    }
+}
+
+/* Expo screen */
+.expo-screen{
+    h1,h2,h3,h4,h5,h6,p,span,a{
+        color: $f-dark;
+    }
+    header{
+        width: 100%;
+        display: block;
+        height: 44px;
+        background-color: $bg-dark;
+        border-top: 1px solid transparentize($light,0.8);
+        h2{
+            font-size: 16px;
+            line-height: 44px; 
+            text-align: center;
+            color: transparentize($light,0.4); 
+        }
+    }
+
+    &.btoy{
+        .featured-img{
+            background-image: url(../img/btoy_main.jpg);
+        }
+    }
+    &.vinz{
+        .featured-img{
+            background-image: url(../img/vinz_main.jpg);
+        }
+    }
+    &.hoppek{
+        .featured-img{
+            background-image: url(../img/hoppek_main.jpg);
+        }
+    }
+    &.grudziecki{
+        .featured-img{
+            background-image: url(../img/grudziecki_main.jpg);
+        }
+    }
+    &.okuda{
+        .featured-img{
+            background-image: url(../img/okuda_main.jpg);
+        }
+    }
+    &.paper{
+        .featured-img{
+            background-image: url(../img/paper_main.jpg);
+        }
+    }
+    &.spy{
+        .featured-img{
+            background-image: url(../img/spy_main.jpg);
+        }
+    }
+
+    .featured-img{
+        width: 100%;
+        height: $gutter * 19;
+        background-position: center;
+        background-size: cover;
+        @media screen and (min-width:678px){
+            height: $gutter * 35;
+        }
+    }
+
+    .expo-screen-content{
+        padding: $gutter * 4 $gutter;
+        .main-info{
+            .category{
+                font-size: 0.9em;
+                color: lighten($f-dark,20%);
+            }
+            h3{
+                font-size: 24px;
+                font-weight: 400;
+                margin-top: $gutter;
+            }
+            .artist{
+                font-weight: 500;
+                font-size: 24px;
+            }
+        }
+
+        .description{
+            margin-top: $gutter * 2;
+        }
+
+        
+        
+    }
+
+    .expo-slider{
+        margin: 30px -10px 0;
+        p{
+            padding: 0 $gutter;
+        }
+        .slider{
+            .slider-slide{
+                img{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .slider-pager{
+        .slider-pager-page{
+            color: $light;
+        }
+    }
+
+    .bio{
+        margin-top: $gutter * 3;
+        >div{
+            @media screen and (min-width: 1024px){
+                float:left;
+                width: 480px;
+            }
+        }
+        &:after{
+            content: '';
+            width: 100%;
+            display: table;
+        }
+        h3{
+            font-size: 24px;
+            font-weight: 400;
+            margin-top: $gutter;
+            strong{
+                font-weight: 500;
+            }
+        }
+
+        img{
+            float: left;
+            max-width: 100%;
+            @media screen and (min-width: 1024px){
+                float:right;
+                width: 480px;
+            }
+        }
+    }
+}
+
+/* Credits */
+.credits{
+    .button{
+        color: $light;
+    }
+    
+    .credits-content{
+        .credits-block{
+            padding:0 $gutter;
+            margin: $gutter*3 0;
+            text-align: center;
+            p{
+                font-weight: 300;
+            }
+            h2,p{
+                
+                font-size: 18px;
+                margin-bottom: $gutter * 2;
+            }
+        }
+       
+    }
+    
+}
+
+/* The project */
+.theproject{
+    .theproject-content{
+        margin: $gutter * 3 0;
+        padding: 0 $gutter;
+        h2{
+            font-size: 18px;
+        }
+    }
+}
+
+/* Credits and The project*/
+.credits,
+.theproject{
+    color: $f-dark;
+    h1,h2,h3,h4,h5,h6,p,span,a{
+        color: $f-dark;
+    }
+}
+
+
+@-webkit-keyframes loader {
+    0% { transform: rotate(0deg);-webkit-transform: rotate(0deg); }
+    25% { transform: rotate(90deg);-webkit-transform: rotate(90deg); }
+    50% { transform: rotate(180deg);-webkit-transform: rotate(180deg); }
+    75% { transform: rotate(270deg);-webkit-transform: rotate(270deg); }
+    100% { transform: rotate(360deg);-webkit-transform: rotate(360deg); }
+}
+@keyframes loader {
+    0% { transform: rotate(0deg);-webkit-transform: rotate(0deg); }
+    25% { transform: rotate(90deg);-webkit-transform: rotate(90deg); }
+    50% { transform: rotate(180deg);-webkit-transform: rotate(180deg); }
+    75% { transform: rotate(270deg);-webkit-transform: rotate(270deg); }
+    100% { transform: rotate(360deg);-webkit-transform: rotate(360deg); }
+}
+
+
+
+
+
+
