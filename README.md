@@ -1,6 +1,7 @@
 # Artea eskura. SC Gallery
 
 Arakatu, elkarreragin eta ezagutu artista garaikideen obra.
+
 <a href="http://www.arteaeskura.eus" target="_blank">www.arteaeskura.com</a>
 
 ##Artea zure eskura. 
