@@ -18,6 +18,7 @@ angular.module('scgallery',['ionic','ngRoute'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    
 
   });
 
@@ -27,6 +28,8 @@ angular.module('scgallery',['ionic','ngRoute'])
 
 .config(['$httpProvider','$sceDelegateProvider',function ($httpProvider,$sceDelegateProvider) {
   
+  
+
   $sceDelegateProvider.resourceUrlWhitelist([
     // Allow same origin resource loads.
     'self',
